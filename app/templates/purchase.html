@@ -1,10 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 
     <div>
         {% for purchase in purchases %}
@@ -12,5 +7,4 @@
         {% endfor %}
     </div>
 
-</body>
-</html>
+{% endblock %}

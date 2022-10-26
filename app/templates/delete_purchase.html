@@ -4,7 +4,7 @@
     <div class="form-group">
       <form method="POST">
           {{ form.csrf_token }}
-          <p>Вы действительно хотите удалить запись о покупке {{ item.name }} № {{ item.id }}</p>
+          <p>Вы действительно хотите удалить запись о покупке {{ purchase.name }} № {{ purchase.id }}</p>
           <input type="submit" value="Удалить" class="btn btn-danger"/>
       </form>
     </div>

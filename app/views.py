@@ -108,9 +108,11 @@ def update_single_purchase(purchase_id):
 
 def delete_single_purchase(purchase_id):
     purchase = Purchase.query.filter_by(id=purchase_id).first()
+    form = PurchaseForm()
     if request.method == 'GET':
-        return render_template('delete_purchase.html', purchase=purchase)
+        return render_template('delete_purchase.html', purchase=purchase, form=form)
     if request.method == 'POST':
         db.session.delete(purchase)
         db.session.commit()
+        flash(f'Данные о продажах под номером {purchase.id} успешно удалены', 'success')
         return redirect(url_for('purchase'))
